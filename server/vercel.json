@@ -11,5 +11,10 @@
             "src": "/(.*)",
             "dest": "/app.js"
         }
-    ]
+    ],
+    "functions": {
+    "path/to/dir/**/*": {
+          "maxDuration": 5 
+        }
+      }
 }
