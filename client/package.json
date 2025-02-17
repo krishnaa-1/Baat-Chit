@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^2.3.0",
     "@fontsource/urbanist": "^5.1.1",
     "@tailwindcss/vite": "^4.0.6",
     "lucide-react": "^0.475.0",
