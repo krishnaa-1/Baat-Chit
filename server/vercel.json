@@ -13,8 +13,8 @@
         }
     ],
     "functions": {
-    "path/to/dir/**/*": {
-          "maxDuration": 5 
-        }
+    "api/auth/**/*.js": {
+      "maxDuration": 30
+    }
       }
 }
