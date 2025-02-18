@@ -19,8 +19,8 @@ const AuthPage = () => {
     // console.log(import.meta.env.VITE_REACT_APP_API_URL)
     e.preventDefault();
     const authURL = isLogin
-      ? `${import.meta.env.VITE_REACT_APP_API_URL}/auth/login`
-      : `${import.meta.env.VITE_REACT_APP_API_URL}/auth/register`;
+      ? `${import.meta.env.VITE_REACT_APP_API_URL}/api/auth/login`
+      : `${import.meta.env.VITE_REACT_APP_API_URL}/api/auth/register`;
     const response = await fetch(authURL, {
       method: "POST",
       headers: {
@@ -64,7 +64,7 @@ const AuthPage = () => {
       };
       // console.log(import.meta.env.VITE_REACT_APP_API_URL)
 
-      const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/auth/google-login`, {
+      const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/api/auth/google-login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

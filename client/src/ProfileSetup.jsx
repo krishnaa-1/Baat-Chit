@@ -26,7 +26,7 @@ const ProfileSetup = () => {
       bio,
       image,
     });
-    const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/auth/user/${params.userId}`, {
+    const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/api/auth/user/${params.userId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
