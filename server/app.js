@@ -14,12 +14,18 @@ const Message = require("./models/Message");
 
 const app = express();
 const httpServer = createServer(app);
+const allowedOrigins = [
+  "https://baat-chit-one.vercel.app", 
+  "https://baat-chit-fronted1.vercel.app"
+];
+
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://baat-chit-one.vercel.app", // Replace with your frontend's origin in production
+    origin: allowedOrigins,
     methods: ["GET", "POST"],
   },
 });
+
 
 app.use(cors());
 
