@@ -16,7 +16,7 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: "*", // Replace with your frontend's origin in production
+    origin: "https://baat-chit-one.vercel.app", // Replace with your frontend's origin in production
     methods: ["GET", "POST"],
   },
 });
