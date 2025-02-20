@@ -61,4 +61,28 @@ router.get("/chatroom/messages/:id", async (req, res) => {
 });
 
 
+router.post("/joinChat", async (req, res) => {
+    try {
+        const { senderId, recipientId } = req.body;
+
+        // Find a chat room where the members array contains both senderId and recipientId
+        let chatRoom = await ChatRoom.findOne({
+            members: { $all: [senderId, recipientId] },
+        });
+
+        if (!chatRoom) {
+            // If no chatroom exists, create a new one
+            chatRoom = new ChatRoom({
+                members: [senderId, recipientId],
+            });
+            await chatRoom.save();
+        }
+
+        res.status(200).json({ success: true, chatRoom });
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Error joining chatroom", error: error.message });
+    }
+}); 
+
+
 module.exports = router;
