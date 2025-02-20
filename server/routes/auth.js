@@ -67,6 +67,15 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.get("/users", async (req, res) => {
+  try {
+    const users = await User.find().select("username"); // Exclude the password field
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+});
+
 router.get("/user/:id", async (req, res) => {
   try {
     const user = await User.findById(req.params.id).select("-password"); // Exclude the password field
