@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Plus, MoreVertical } from "lucide-react";
 import AddChat from "./AddChat";
 
-const ChatList = ({ chats, selectedChat, onChatSelect, activeTab, setActiveTab, setChatsData , socket}) => {
+const ChatList = ({ chats, selectedChat, onChatSelect, activeTab, setActiveTab, setChatsData, socket }) => {
   const [isAddChatVisible, setIsAddChatVisible] = useState(false);
-//  console.log(chats)
+
   return (
-    <div className="w-1/3 border-r bg-gray-100 relative">
+    <div className="w-1/3 border-r bg-gray-100 relative flex flex-col h-screen">
       {/* Header */}
       <div className="p-4 bg-white flex justify-between items-center border-b">
         <h2 className="text-xl font-bold">Chats</h2>
@@ -35,8 +35,8 @@ const ChatList = ({ chats, selectedChat, onChatSelect, activeTab, setActiveTab, 
         ))}
       </div>
 
-      {/* Chat List */}
-      <div className="overflow-y-auto">
+      {/* Chat List - Scrollable */}
+      <div className="flex-1 overflow-y-auto">
         {chats.length > 0 ? (
           <ul>
             {chats.map((chat) => (
@@ -56,10 +56,9 @@ const ChatList = ({ chats, selectedChat, onChatSelect, activeTab, setActiveTab, 
             ))}
           </ul>
         ) : (
-            <div className="flex items-center justify-center h-[calc(100vh-120px)] text-gray-500">
+          <div className="flex items-center justify-center h-full text-gray-500">
             Add Someone to start your <span className="font-semibold ml-1">Baat cheet</span>!
           </div>
-          
         )}
       </div>
 

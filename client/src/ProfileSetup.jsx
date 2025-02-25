@@ -32,6 +32,7 @@ const ProfileSetup = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        username: userName,
         bio,
         image: "dummy",
       }),
